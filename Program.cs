@@ -25,8 +25,8 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 // CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
-        policy.AllowAnyOrigin()
+    options.AddPolicy("Frontend", policy =>
+        policy.WithOrigins("http://localhost:5173")
               .AllowAnyHeader()
               .AllowAnyMethod());
 });
@@ -49,7 +49,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowFrontend");
+app.UseCors("Frontend");
 
 app.UseAuthorization();
 
