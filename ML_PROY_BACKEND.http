@@ -1,0 +1,6 @@
+@ML_PROY_BACKEND_HostAddress = http://localhost:5180
+
+GET {{ML_PROY_BACKEND_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
